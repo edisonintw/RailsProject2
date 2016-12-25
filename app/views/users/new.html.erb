@@ -1,0 +1,15 @@
+<%= flash[:alert] if !flash[:alert].nil?  %>
+
+<%= form_for @user, url: users_path, method: :post do |u| %>
+
+
+<%= u.text_field :username %>
+<%= u.text_field :age %>
+<%= u.text_field :account %>
+<%= u.text_field :password %>
+
+<%= u.submit "Submit" %>
+
+<% end %>
+
+
