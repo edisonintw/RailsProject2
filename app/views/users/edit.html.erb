@@ -1,0 +1,18 @@
+<%= flash[:alert] if !flash[:alert].nil?  %>
+
+<%= form_for @user, url: user_path(@user), method: :put do |u| %>
+
+
+<%= u.text_field :username %><br>
+<%= u.text_field :age %> <br>
+<%= u.text_field :account %> <br>
+<%= u.text_field :password, value:  nil %><br>
+
+<%= image_tag @user.avatar.url %>
+
+<%= u.file_field :avatar %>
+<%= u.submit "Submit" %>
+
+<% end %>
+
+

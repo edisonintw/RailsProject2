@@ -3,4 +3,24 @@
 <%= "First Page" %>
 
 
-<%= link_to "Signup", new_user_path %>
+
+<%= link_to "Signup", new_user_path %> <br>
+<%= link_to "User List", users_path %> <br>
+
+<%=  form_for @user, url:login_users_path, method: :post do |u| %>
+
+<%= u.text_field :account %>
+<%= u.password_field :password %>
+
+<%= u.submit "Submit" %>
+<% end %>
+<%= link_to "Logout", logout_users_path %> <br>
+
+
+<% if !@current_user.nil? %>
+<%= link_to "Comments", user_comments_path(@current_user) %>
+<%= link_to "New Comment", new_user_comment_path(@current_user) %> <br>
+<% end %>
+
+<%= flash[:notice] if !flash[:notice].nil? %>
+<%= flash[:alert] if !flash[:alert].nil? %>

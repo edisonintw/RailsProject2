@@ -1,0 +1,23 @@
+
+<% if @users.length > 0 %>
+  <% @users.each do |u|%>
+    <%= image_tag u.avatar.url(:thumb) %>
+    <%= u.username %> |
+    <%= u.account %>|
+    <%= u.age %>
+    <%= link_to "Show", user_path(u) %>
+    <% if @user.id == u.id %>
+      <%= link_to "Edit", edit_user_path(u) %>
+      <%= link_to "Delete", user_path(u) ,  method: :delete, data: {confirm: 'Are you sure?', disable_with: 'Removing'}%>
+    <% end %>
+    <br>
+  <% end %>
+
+
+
+
+<% else%>
+No User.
+<% end %>
+
+

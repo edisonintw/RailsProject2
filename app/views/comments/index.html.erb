@@ -1,0 +1,20 @@
+
+<% if @comments.length >0 %>
+  <% @comments.each do |c| %>
+    <%= c.message %>
+    Username:  <%= c.user.username %>
+    <%= link_to "Show" , user_comment_path(c.user_id,c) %>
+    <% if @user.id == c.user_id %>
+    <%= link_to "Edit", edit_user_comment_path(c.user_id, c) %>
+    <%= link_to "Delete", user_comment_path(c.user_id,c) ,  method: :delete, data: {confirm: 'Are you sure?', disable_with: 'Removing'}%>
+    <% end %>
+    <br>
+  <% end %>
+<% else %>
+  No Comments
+<% end %>
+
+
+
+
+

@@ -1,0 +1,12 @@
+
+<%= flash[:alert] if !flash[:alert].nil?  %>
+
+<%= form_for @comment, url: user_comments_path(@user), method: :post do |c| %>
+
+
+
+<%= c.text_field :message %> </br>
+
+<%= c.submit "Submit" %>
+
+<% end %>

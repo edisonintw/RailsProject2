@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161225131824) do
+ActiveRecord::Schema.define(version: 20170103132213) do
+
+  create_table "comments", force: :cascade do |t|
+    t.string  "message", null: false
+    t.integer "user_id"
+  end
 
   create_table "users", force: :cascade do |t|
-    t.string  "username", limit: 20, null: false
-    t.integer "age"
-    t.string  "account",  limit: 20, null: false
-    t.string  "password", limit: 20, null: false
+    t.string   "username",            limit: 20, null: false
+    t.integer  "age"
+    t.string   "account",             limit: 20, null: false
+    t.string   "password",            limit: 60, null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
 end
