@@ -12,7 +12,10 @@
 <%= u.text_field :account %>
 <%= u.password_field :password %>
 
-<%= u.submit "Submit" %>
+<%= u.submit "Submit", class:"btn btn-success" %>
+
+
+
 <% end %>
 <%= link_to "Logout", logout_users_path %> <br>
 
