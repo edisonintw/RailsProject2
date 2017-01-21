@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 
-  before_action :set_user, only: [:index,:new,:edit,:create,:update,:destroy]
+  before_action :set_user, only: [:new,:edit,:create,:update,:destroy]
   before_action :set_comment, only: [:edit, :update, :destroy]
 
   def index

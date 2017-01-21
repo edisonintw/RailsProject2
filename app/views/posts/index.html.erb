@@ -1,0 +1,18 @@
+
+<% if @posts.length >0 %>
+  <% @posts.each do |c| %>
+    <%= c.message %>
+    Username:  <%= c.user.username %>
+    <%= link_to "Show" , post_path(c.id) %>
+
+    <% if !@user.nil? && (@user.id == c.user_id) %>
+    <%= link_to "Edit", edit_post_path(c.id) %>
+   <%= link_to "Delete", post_path(c.id) ,  method: :delete, data: {confirm: 'Are you sure?', disable_with: 'Removing'}%>
+    <% end %>
+    <br>
+  <% end %>
+<% else %>
+  No Threads
+<% end %>
+
+<script>alert(1);</script>

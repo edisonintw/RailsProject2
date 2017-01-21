@@ -4,10 +4,11 @@ Rails.application.routes.draw do
 
   get 'german_lessons', to: 'lessons#german'
 
-  resources :forums
+  resources :posts do
+    resources :comments
+  end
 
   resources :users do
-    resources :comments
 
     collection do
       post 'login'

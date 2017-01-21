@@ -20,10 +20,5 @@
 <%= link_to "Logout", logout_users_path %> <br>
 
 
-<% if !@current_user.nil? %>
-<%= link_to "Comments", user_comments_path(@current_user) %>
-<%= link_to "New Comment", new_user_comment_path(@current_user) %> <br>
-<% end %>
-
 <%= flash[:notice] if !flash[:notice].nil? %>
 <%= flash[:alert] if !flash[:alert].nil? %>
