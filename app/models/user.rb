@@ -19,5 +19,6 @@ class User < ActiveRecord::Base
   validates_attachment :avatar,
     content_type: { content_type: /\Aimage\/.*\Z/ },                          # 或特定類型 content_type: "image/jpeg" or content_type: ['image/jpeg', 'image/png', 'image/gif']
     size: { in: 0..20.megabyte }                                             # 或 KB { in: 0..20.kilobytes }
+  do_not_validate_attachment_file_type :avatar
 end
 
