@@ -10,13 +10,18 @@
 <%= form_for @user, url: users_path, method: :post do |u| %>
 
 
-<%= u.text_field :username %>
-<%= u.text_field :age %>
-<%= u.text_field :account %>
-<%= u.text_field :password %>
-
-<%= u.submit "Submit" %>
-
+<div class="text-left">
+<br>
+    Username:<%= u.text_field :username %>
+<br>
+    Age     :<%= u.text_field :age %>
+<br>
+    Account :<%= u.text_field :account %>
+<br>
+    Password:<%= u.text_field :password %>
+<br>
+             <%= u.submit "Submit" %>
+</div>
 <% end %>
 
 
